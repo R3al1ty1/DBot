@@ -9,7 +9,7 @@ import db_processor
 
 import consts
 
-tgToken = consts.TgToken
+tgToken = consts.tgToken
 bot = Bot(token=tgToken)
 dp = Dispatcher(bot, storage= MemoryStorage())
 
