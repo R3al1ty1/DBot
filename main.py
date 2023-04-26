@@ -7,7 +7,9 @@ import psycopg2
 
 import db_processor
 
-tgToken = '5854604871:AAEA_v6nr1SSi_rMSS5fka2yyV3eAHGgtFQ'
+import consts
+
+tgToken = consts.TgToken
 bot = Bot(token=tgToken)
 dp = Dispatcher(bot, storage= MemoryStorage())
 
@@ -15,9 +17,9 @@ dp = Dispatcher(bot, storage= MemoryStorage())
 conn = psycopg2.connect(
     host="localhost",
     database="DBot",
-    user="postgres",
-    port="5433",
-    password="5441"
+    user=consts.user,
+    port=consts.port,
+    password=consts.password
 )
 
 @dp.message_handler(commands=['start'])
